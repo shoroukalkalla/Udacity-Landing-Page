@@ -8,7 +8,7 @@
 
 * [Main-Features](#main-features)
 
-- [Demo]()
+- [Demo](https://shoroukalkalla.github.io/Udacity-Landing-Page/)
 
 ## Introduction
 
