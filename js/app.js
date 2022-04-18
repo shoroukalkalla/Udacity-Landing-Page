@@ -25,6 +25,7 @@
 const navBarList = document.querySelector("#navbar__list");
 const allSections = document.querySelectorAll("section");
 const bar = document.querySelector(".bar");
+let activeSection = allSections[0];
 /**
  * End Global Variables
  * Start Helper Functions
@@ -54,16 +55,22 @@ const buildNav = () => {
 };
 
 // Add class 'active' to section when near top of viewport
-const activeSection = (e) => {
+const setActiveSection = (e) => {
+  activeSection.classList.remove("your-active-class");
   const navLink = document.querySelectorAll("nav ul li a");
   let currentSection = "";
+  let flag = false;
 
   allSections.forEach((section) => {
     const sectionTop = section.offsetTop;
     if (scrollY >= sectionTop - 150) {
       currentSection = section.getAttribute("id");
+      activeSection = section;
+      flag = true;
     }
   });
+
+  if (flag) activeSection.classList.add("your-active-class");
 
   navLink.forEach((link) => {
     link.parentElement.classList.remove("active");
@@ -84,6 +91,12 @@ const scrollToSection = (e) => {
   });
 };
 
+// Menu Bar Toggling
+const menuBar = (e) => {
+  e.preventDefault();
+  navBarList.classList.toggle("display");
+};
+
 /**
  * End Main Functions
  * Begin Events
@@ -94,11 +107,10 @@ const scrollToSection = (e) => {
 window.addEventListener("DOMContentLoaded", buildNav());
 
 // Responsive Bar
-bar.addEventListener("click", () => navBarList.classList.toggle("display"));
+bar.addEventListener("click", menuBar);
 
 // Scroll to section on link click
 navBarList.addEventListener("click", scrollToSection);
 
 // Set sections as active
-window.addEventListener("scroll", activeSection);
-
+window.addEventListener("scroll", setActiveSection);

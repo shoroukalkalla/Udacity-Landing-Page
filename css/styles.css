@@ -38,7 +38,7 @@ h1 {
 
 @media only screen and (min-width: 35em){
     h1 {
-        font-size: 7em;
+        font-size: 6em;
         margin: 2em 4rem 1em;
     }
 }
@@ -104,7 +104,7 @@ section {
     display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:35em) {
     #navbar__list{
         position: absolute;
         top: 47px;
@@ -130,6 +130,19 @@ section {
     }
     #navbar__list li a{
         color:white;
+    }
+}
+
+@media(max-width: 52em) {
+    h1 {
+        font-size: 4em;
+        margin: 2em 4rem 1em;
+    }
+    h2 {
+        font-size: 3em;
+    }
+    section .landing__container {
+        text-align: left !important;
     }
 }
 
@@ -174,6 +187,30 @@ section:nth-of-type(even) .landing__container {
     text-align: right; 
 }
 
+@media(max-width: 37em){
+    h1 {
+        font-size: 3em;
+        margin-top: 4em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+     p {font-size: 1em;}
+    section:nth-of-type(even) .landing__container {
+        text-align: left;
+    }
+}
+@media(max-width: 28em) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    p {
+        font-size: .75em;
+    }
+}
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
@@ -241,6 +278,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px rgba(217, 4, 232, 0.676);
 }
 
 section.your-active-class .landing__container::before {

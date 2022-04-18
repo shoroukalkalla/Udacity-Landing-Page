@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
-* [Introduction](#introduction)
+- [Introduction](#introduction)
 
-* [Description](#description)
+- [Description](#description)
 
-* [Main-Features](#main-features)
+- [Main-Features](#main-features)
 
-- [Demo]()
+* [Demo]()
 
 ## Introduction
 
